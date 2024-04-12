@@ -1,0 +1,127 @@
+1. GET All Products
+Method: GET
+Endpoint: http://localhost:8080/products
+Description: Retrieves all products from the database.
+Example:
+json
+Copy code
+[
+    {
+        "productId": "150",
+        "name": "Milk Product",
+        "stockQuantity": 100,
+        "expireDate": "2024-12-31",
+        "price": 10.99,
+        "quantity": 50
+    },
+    ...
+]
+2. GET Product by ID
+Method: GET
+Endpoint: http://localhost:8080/products/{id}
+Description: Retrieves a product by its ID.
+Example:
+json
+Copy code
+{
+    "productId": "150",
+    "name": "Milk Product",
+    "stockQuantity": 100,
+    "expireDate": "2024-12-31",
+    "price": 10.99,
+    "quantity": 50
+}
+3. GET Products by Product ID
+Method: GET
+Endpoint: http://localhost:8080/products/getbyproductid/{productid}
+Description: Retrieves products by their productId.
+Example:
+json
+Copy code
+[
+    {
+        "productId": "150",
+        "name": "Milk Product",
+        "stockQuantity": 100,
+        "expireDate": "2024-12-31",
+        "price": 10.99,
+        "quantity": 50
+    },
+    ...
+]
+4. GET Products by Dynamic Field
+Method: GET
+Endpoint: http://localhost:8080/products/getbydynamicfield?key={key}&value={value}
+Description: Retrieves products based on a dynamic field and its value.
+Parameters:
+key: Key of the dynamic field
+value: Value to search for
+Example:
+json
+Copy code
+[
+    {
+        "productId": "150",
+        "name": "Milk Product",
+        "stockQuantity": 100,
+        "expireDate": "2024-12-31",
+        "price": 10.99,
+        "quantity": 50
+    },
+    ...
+]
+5. Create a New Product
+Method: POST
+Endpoint: http://localhost:8080/products
+Description: Creates a new product.
+Example Request Body:
+json
+Copy code
+{
+    "productId": "151",
+    "name": "Cheese",
+    "stockQuantity": 50,
+    "expireDate": "2025-06-30",
+    "price": 5.99,
+    "quantity": 20
+}
+Response: Newly created product object
+6. Bulk Upload Products
+Method: POST
+Endpoint: http://localhost:8080/products/bulkupload
+Description: Creates multiple products in bulk.
+Example Request Body:
+json
+Copy code
+[
+    {
+        "productId": "152",
+        "name": "Yogurt",
+        "stockQuantity": 30,
+        "expireDate": "2025-09-15",
+        "price": 3.49,
+        "quantity": 10
+    },
+    ...
+]
+Response: List of newly created product objects
+7. Update a Product by ID
+Method: PUT
+Endpoint: http://localhost:8080/products/{id}
+Description: Updates an existing product.
+Example Request Body:
+json
+Copy code
+{
+    "productId": "150",
+    "name": "Organic Milk",
+    "stockQuantity": 80,
+    "expireDate": "2024-12-31",
+    "price": 12.99,
+    "quantity": 40
+}
+Response: Updated product object
+8. Delete a Product by ID
+Method: DELETE
+Endpoint: http://localhost:8080/products/{id}
+Description: Deletes a product by its ID.
